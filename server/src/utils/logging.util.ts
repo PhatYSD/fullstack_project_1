@@ -16,7 +16,7 @@ const loggingMode = (): LoggingMode => {
         };
     }
     if (mode() === Mode.Prod) {
-        const pathLog: string = path.join("logs", ".logs");
+        const pathLog: string = path.join("logs", ".log");
 
         if (!fs.readdirSync(path.join()).includes("logs")) {
             fs.mkdirSync(path.join("logs"));
@@ -30,7 +30,7 @@ const loggingMode = (): LoggingMode => {
         };
     }
 
-    const pathLog: string = path.join("logs", ".test.logs");
+    const pathLog: string = path.join("logs", ".test.log");
 
     if (!fs.readdirSync(path.join()).includes("logs")) {
         fs.mkdirSync(path.join("logs"));

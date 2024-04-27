@@ -32,18 +32,22 @@ model Account {
 }
 
 model Income {
-  id     Int    @id @default(autoincrement())
-  amount Int
-  list   String
+  id        Int      @id @default(autoincrement())
+  amount    Int
+  list      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   accountId String
   account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
 
 model Expense {
-  id     Int    @id @default(autoincrement())
-  amount Int
-  list   String
+  id        Int      @id @default(autoincrement())
+  amount    Int
+  list      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   accountId String
   account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade, onUpdate: Cascade)
