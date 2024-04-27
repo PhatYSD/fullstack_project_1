@@ -52,6 +52,10 @@ const token: RequestHandler = async (req: RequestUser, res: Response, next: Next
             httpOnly: true,
             secure: true
         });
+        req.user = {
+            username,
+            id: user.id
+        };
     
         next()
     } catch {
